@@ -2,6 +2,7 @@ import { Volume2Icon, VolumeOff } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import Select from 'react-select'
 import PokemonInfo from '@/components/pokemon/pokemon-info'
+import Pokemon3DModel from '@/components/pokemon/pokemon-model';
 
 export default function PokemonSelector({ pokemonList }: { pokemonList: any }) {
 	const [leftPokemon, setLeftPokemon] = useState({})
@@ -129,7 +130,10 @@ export default function PokemonSelector({ pokemonList }: { pokemonList: any }) {
 							</div>
 
 							{!isEmptyObject(leftSelectedPokemon) && (
-								<PokemonInfo pokemon={leftSelectedPokemon} color="blue" />
+								<>
+									<Pokemon3DModel height={leftSelectedPokemon.height} modelPath={'/storage/3d-models/' + leftSelectedPokemon.name + '/anim.dae'} />
+									<PokemonInfo pokemon={leftSelectedPokemon} color="blue" />
+								</>
 							)}
 						</div>
 					</div>
@@ -213,7 +217,10 @@ export default function PokemonSelector({ pokemonList }: { pokemonList: any }) {
 							</div>
 
 							{!isEmptyObject(rightSelectedPokemon) && (
-								<PokemonInfo pokemon={rightSelectedPokemon} color="red" />
+								<>
+									<Pokemon3DModel height={rightSelectedPokemon.height} modelPath={'/storage/3d-models/' + rightSelectedPokemon.name + '/anim.dae'} />
+									<PokemonInfo pokemon={rightSelectedPokemon} color="red" />
+								</>
 							)}
 						</div>
 					</div>
