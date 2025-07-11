@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import * as THREE from "three";
-import { ColladaLoader } from "three/examples/jsm/loaders/ColladaLoader";
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { ColladaLoader } from 'three/examples/jsm/loaders/ColladaLoader';
 
 export default function Pokemon3DModel({ height, modelPath }: { height: number; modelPath: string }) {
     const mountRef = useRef<HTMLDivElement>(null);
